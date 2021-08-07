@@ -31,6 +31,7 @@ nav img {
 }
 .hamburger {
   display: none;
+  z-index: 2;
 }
 /* .hamburger > img {
   width: 40px;
@@ -169,7 +170,50 @@ ul li {
   transition: 0.3s ease;
   transform: scale(1.1);
 }
+.option-enable {
+  /* display: none; */
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  transform: translate(0, -100vh);
 
+  background-color: var(--bg-color);
+
+  z-index: 1;
+}
+.options-mobile {
+  height: 100vh;
+  /* background-color: gainsboro; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.animateToBottomClass {
+  animation: animateToBottom 0.3s ease forwards;
+}
+.animateToTopClass {
+  animation: animateToTop 0.3s ease forwards;
+}
+
+@keyframes animateToBottom {
+  from {
+    transform: translate(0vw, -100vh);
+  }
+  to {
+    transform: translate(0vw, 0vh);
+  }
+}
+@keyframes animateToTop {
+  from {
+    transform: translate(0vw, 0vh);
+  }
+  to {
+    transform: translate(0vw, -100vh);
+  }
+}
 /* for smaller devices */
 @media (max-width: 740px) {
   .home {
