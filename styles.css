@@ -161,12 +161,12 @@ ul li {
   height: 50vh;
 }
 .works img {
-  transition: 1s ease;
+  transition: 0.3s ease;
   width: 45vw;
   height: 50vh;
 }
 .works img:hover {
-  transition: 1s ease;
+  transition: 0.3s ease;
   transform: scale(1.1);
 }
 
