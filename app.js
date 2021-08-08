@@ -99,7 +99,7 @@ card.forEach((eachCard) => {
     var posY = e.pageY;
     var moveY = offsetTop + midY - posY;
     var moveX = offsetLeft + midX - posX;
-    const effectRatio = 8;
+    const effectRatio = 10;
     console.log({ moveX, moveY });
     eachCard.style.transform = `rotateX(${moveY / effectRatio}deg) rotateY(${
       -moveX / effectRatio

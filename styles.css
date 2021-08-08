@@ -98,6 +98,7 @@ ul li {
   perspective: 1000px;
   flex: 1;
 }
+
 .bio {
   flex: 1;
   /* background: lightseagreen; */
@@ -155,6 +156,11 @@ ul li {
   color: white;
   font-size: 3em;
 }
+.and {
+  /* background: lightseagreen; */
+  width: fit-content;
+  margin: auto;
+}
 
 .projects > h3,
 .contact > h3 {
@@ -194,6 +200,8 @@ ul li {
 }
 .works {
   perspective: 1000px;
+
+  /* background: lightseagreen; */
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
