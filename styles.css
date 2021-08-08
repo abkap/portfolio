@@ -168,7 +168,7 @@ ul li {
   width: fit-content;
   margin: auto;
   margin-bottom: 10px;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .option-enable {
@@ -179,6 +179,7 @@ ul li {
   top: 0px;
   bottom: 0px;
   transform: translate(0, -100vh);
+  border-bottom: 1px solid white;
 
   background-color: var(--bg-color);
 
@@ -281,6 +282,9 @@ ul li {
 @media (max-width: 870px) {
   .terminal > h4 {
     font-size: 15px;
+  }
+  .bio-quote h3 {
+    font-size: 2rem;
   }
 }
 @media (max-width: 740px) {
