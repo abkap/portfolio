@@ -5,12 +5,18 @@ var typewriter = document.querySelector(".typewriter-anime");
 const hamburger = document.querySelector(".hamburger");
 const themeButton = document.querySelector(".img-div");
 const themeButtonImg = document.querySelector("#theme-icon");
+const card = document.querySelectorAll(".div-a");
 var currentTheme = "dark";
 const root = document.querySelector(":root");
 isOptionActive = false;
 const aTag = document.querySelectorAll("a");
 
 const main = document.querySelector("main");
+
+const optionEnable = document.querySelector(".option-enable");
+var isAnimateBottomEnabled = false;
+var isAnimateTopEnabled = false;
+var burger = document.getElementById("burger");
 
 async function waitFor(time) {
   return new Promise((res, rej) => {
@@ -78,10 +84,6 @@ themeButton.addEventListener("click", () => {
 });
 
 // for smaller devices
-const optionEnable = document.querySelector(".option-enable");
-var isAnimateBottomEnabled = false;
-var isAnimateTopEnabled = false;
-var burger = document.getElementById("burger");
 
 aTag.forEach((item) => {
   item.addEventListener("click", () => {
@@ -99,7 +101,7 @@ hamburger.addEventListener("click", () => {
     optionEnable.style.display = "initial";
   if (!isOptionActive) {
     // we enable here
-    // optionEnable.style.display = "block";
+
     isOptionActive = true;
 
     burger.src = "./icons/close.svg";
@@ -120,12 +122,10 @@ hamburger.addEventListener("click", () => {
     optionEnable.classList.add("animateToTopClass");
     isAnimateTopEnabled = true;
 
-    // optionEnable.style.display = "none";
     isOptionActive = false;
   }
 });
 
-const card = document.querySelectorAll(".div-a");
 card.forEach((eachCard) => {
   eachCard.addEventListener("mousemove", (e) => {
     var midX = eachCard.offsetWidth / 2;
@@ -137,7 +137,7 @@ card.forEach((eachCard) => {
     var moveY = offsetTop + midY - posY;
     var moveX = offsetLeft + midX - posX;
     const effectRatio = 10;
-    console.log({ moveX, moveY });
+
     eachCard.style.transform = `rotateX(${moveY / effectRatio}deg) rotateY(${
       -moveX / effectRatio
     }deg)`;
