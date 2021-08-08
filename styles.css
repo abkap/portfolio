@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Roboto+Mono:ital,wght@0,200;1,200&display=swap");
 :root {
-  --blog-color: blue;
+  --blog-color: #3b5ed7;
   --bg-color: #2c2c30;
+  --card-color1: #373944;
+  --card-color2: #5b5d67;
 }
 * {
   margin: 0px;
@@ -9,6 +12,12 @@
 }
 html {
   scroll-behavior: smooth;
+}
+h3,
+h4,
+a {
+  font-family: "Roboto Mono", monospace;
+  color: white;
 }
 
 body {
@@ -72,7 +81,7 @@ ul li {
 
 .blog {
   background: var(--blog-color);
-  padding: 5px 10px;
+  padding: 5px 20px;
   border-radius: 5px;
 }
 .home {
@@ -139,6 +148,7 @@ ul li {
 .bio-quote {
   /* background: green; */
   margin: auto;
+  font-size: 15px;
 }
 .bio-quote h3 {
   margin-bottom: 20px;
@@ -146,30 +156,15 @@ ul li {
   font-size: 3em;
 }
 
-.works {
-  /* background: lightsalmon; */
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+.projects > h3,
+.contact > h3 {
+  /* background-color: lightgreen; */
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 10px;
+  font-size: 3em;
 }
-.works > div {
-  border: 1px solid rgb(97, 90, 160);
-  border-radius: 20px;
-  margin-bottom: 20px;
-  overflow: hidden;
-  width: 45vw;
-  height: 50vh;
-}
-.works img {
-  transition: 0.3s ease;
-  width: 45vw;
-  height: 50vh;
-}
-.works img:hover {
-  transition: 0.3s ease;
-  transform: scale(1.1);
-}
+
 .option-enable {
   /* display: none; */
   position: absolute;
@@ -197,6 +192,66 @@ ul li {
 .animateToTopClass {
   animation: animateToTop 0.3s ease forwards;
 }
+.works {
+  perspective: 1000px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.works a {
+  transition: 0.2s ease;
+  border-radius: 10px;
+  display: flex;
+  background: var(--card-color1);
+  width: 300px;
+  height: 300px;
+  margin-bottom: 30px;
+}
+.animateCard {
+  transform: rotateX(180deg);
+  transition: 0.3s ease;
+}
+
+.works a:nth-child(2n) {
+  background: var(--card-color2);
+}
+.card {
+  /* background: lightsalmon; */
+  width: fit-content;
+  margin: auto;
+}
+.projects {
+  margin: 30px 0px;
+}
+.contact-links {
+  /* background: lightsalmon; */
+  max-width: 300px;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+.contact-links > div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  margin: 10px;
+  border-radius: 10px;
+  /* background: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-links a {
+  /* background: lightseagreen; */
+  width: fit-content;
+}
+.contact-links img {
+  width: 50px;
+  height: 50px;
+}
 
 @keyframes animateToBottom {
   from {
@@ -215,6 +270,11 @@ ul li {
   }
 }
 /* for smaller devices */
+@media (max-width: 870px) {
+  .terminal > h4 {
+    font-size: 15px;
+  }
+}
 @media (max-width: 740px) {
   .home {
     display: flex;
@@ -232,14 +292,10 @@ ul li {
   .right-side {
     justify-content: space-between;
   }
-
-  .works > div {
-    width: 80vw;
-    height: 50vh;
-  }
-
-  .works img {
-    width: 80vw;
-    height: 50vh;
+}
+@media (max-width: 375px) {
+  .bio-quote,
+  .bio-quote {
+    font-size: 10px;
   }
 }

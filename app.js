@@ -50,6 +50,8 @@ aTag.forEach((item) => {
   item.addEventListener("click", () => {
     if (isOptionActive) {
       optionEnable.style.display = "none";
+      burger.src = "./icons/hamburger.svg";
+
       isOptionActive = false;
     }
   });
@@ -84,5 +86,28 @@ hamburger.addEventListener("click", () => {
     // optionEnable.style.display = "none";
     isOptionActive = false;
   }
-  // remove
+});
+
+const card = document.querySelectorAll(".div-a");
+card.forEach((eachCard) => {
+  eachCard.addEventListener("mousemove", (e) => {
+    var midX = eachCard.offsetWidth / 2;
+    var midY = eachCard.offsetHeight / 2;
+    var offsetTop = eachCard.getBoundingClientRect().top + window.pageYOffset;
+    var offsetLeft = eachCard.getBoundingClientRect().left;
+    var posX = e.pageX;
+    var posY = e.pageY;
+    var moveY = offsetTop + midY - posY;
+    var moveX = offsetLeft + midX - posX;
+    const effectRatio = 8;
+    console.log({ moveX, moveY });
+    eachCard.style.transform = `rotateX(${moveY / effectRatio}deg) rotateY(${
+      -moveX / effectRatio
+    }deg)`;
+  });
+  eachCard.addEventListener("mouseout", (e) => {
+    setTimeout(() => {
+      eachCard.style.transform = "rotateX(0deg)";
+    }, 200);
+  });
 });
