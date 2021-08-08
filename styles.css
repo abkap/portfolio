@@ -4,6 +4,8 @@
   --bg-color: #2c2c30;
   --card-color1: #373944;
   --card-color2: #5b5d67;
+  --font-color: white;
+  --terminal-color: black;
 }
 * {
   margin: 0px;
@@ -13,11 +15,21 @@
 html {
   scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+  background: var(--card-color2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--card-color1);
+  border-radius: 5px;
+}
+
 h3,
 h4,
 a {
   font-family: "Roboto Mono", monospace;
-  color: white;
+  color: var(--font-color);
+  display: block;
+  text-decoration: none;
 }
 
 body {
@@ -26,6 +38,7 @@ body {
   background: var(--bg-color);
   padding: 20px;
   min-height: 100vh;
+  transition: 0.2s ease;
 }
 main {
   max-width: 1920px;
@@ -49,11 +62,14 @@ nav img {
 nav {
   /* background-color: lightcoral; */
   display: flex;
+
   align-items: center;
+
+  z-index: 2;
 }
 nav h3 {
   flex-grow: 2;
-  color: white;
+  color: var(--font-color);
 }
 .right-side {
   /* background: lightgray; */
@@ -70,11 +86,6 @@ nav h3 {
   justify-content: space-around;
 }
 
-a {
-  display: block;
-  text-decoration: none;
-  color: white;
-}
 ul li {
   list-style: none;
 }
@@ -83,6 +94,7 @@ ul li {
   background: var(--blog-color);
   padding: 5px 20px;
   border-radius: 5px;
+  color: white;
 }
 .home {
   /* background: lightpink; */
@@ -112,7 +124,7 @@ ul li {
   height: 50%;
   width: 70%;
 
-  background: black;
+  background: var(--terminal-color);
   border-radius: 20px;
 
   transform: rotateY(30deg) rotateX(5deg);
@@ -142,7 +154,7 @@ ul li {
 }
 .terminal h4 {
   display: inline-block;
-  color: white;
+  color: var(--font-color);
   margin: 20px 10px 0 0;
   font-size: 20px;
 }
@@ -153,7 +165,7 @@ ul li {
 }
 .bio-quote h3 {
   margin-bottom: 20px;
-  color: white;
+  color: var(--font-color);
   font-size: 3em;
 }
 .and {
@@ -179,7 +191,7 @@ ul li {
   top: 0px;
   bottom: 0px;
   transform: translate(0, -100vh);
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid var(--font-color);
 
   background-color: var(--bg-color);
 
@@ -245,7 +257,7 @@ ul li {
 .contact-links > div {
   width: 100px;
   height: 100px;
-  border: 1px solid white;
+  border: 1px solid var(--font-color);
   margin: 10px;
   border-radius: 10px;
   /* background: red; */
