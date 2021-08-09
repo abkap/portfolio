@@ -292,12 +292,6 @@ ul li {
   html {
     font-size: 14px;
   }
-  /* .terminal > h4 {
-    font-size: 15px;
-  }
-  .bio-quote h3 {
-    font-size: 2rem;
-  } */
 }
 @media (max-width: 740px) {
   .home {
