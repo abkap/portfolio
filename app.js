@@ -31,7 +31,7 @@ async function typeWriterAnime() {
     await waitFor(100);
 
     typewriter.innerHTML =
-      text.substring(0, i) + "<span class='blinker'>|</span>";
+      text.substring(0, i) + "<span class='blinker'>_</span>";
   }
   animateCursor();
 }
@@ -126,25 +126,46 @@ hamburger.addEventListener("click", () => {
   }
 });
 
-card.forEach((eachCard) => {
-  eachCard.addEventListener("mousemove", (e) => {
-    var midX = eachCard.offsetWidth / 2;
-    var midY = eachCard.offsetHeight / 2;
-    var offsetTop = eachCard.getBoundingClientRect().top + window.pageYOffset;
-    var offsetLeft = eachCard.getBoundingClientRect().left;
-    var posX = e.pageX;
-    var posY = e.pageY;
-    var moveY = offsetTop + midY - posY;
-    var moveX = offsetLeft + midX - posX;
-    const effectRatio = 10;
+// for 3d animation
 
-    eachCard.style.transform = `rotateX(${moveY / effectRatio}deg) rotateY(${
-      -moveX / effectRatio
-    }deg)`;
+if (!isMob()) {
+  card.forEach((eachCard) => {
+    eachCard.addEventListener("mousemove", (e) => {
+      var midX = eachCard.offsetWidth / 2;
+      var midY = eachCard.offsetHeight / 2;
+      var offsetTop = eachCard.getBoundingClientRect().top + window.pageYOffset;
+      var offsetLeft = eachCard.getBoundingClientRect().left;
+      var posX = e.pageX;
+      var posY = e.pageY;
+      var moveY = offsetTop + midY - posY;
+      var moveX = offsetLeft + midX - posX;
+      const effectRatio = 10;
+
+      eachCard.style.transform = `rotateX(${moveY / effectRatio}deg) rotateY(${
+        -moveX / effectRatio
+      }deg)`;
+    });
+    eachCard.addEventListener("mouseout", (e) => {
+      setTimeout(() => {
+        eachCard.style.transform = "rotateX(0deg)";
+      }, 200);
+    });
   });
-  eachCard.addEventListener("mouseout", (e) => {
-    setTimeout(() => {
-      eachCard.style.transform = "rotateX(0deg)";
-    }, 200);
+}
+
+// mobile && tablets
+function isMob() {
+  const toMatch = [
+    /Android/i,
+    /webOS/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i,
+  ];
+
+  return toMatch.some((toMatchItem) => {
+    return navigator.userAgent.match(toMatchItem);
   });
-});
+}
