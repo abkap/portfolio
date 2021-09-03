@@ -303,6 +303,7 @@ ul li {
   }
   .hamburger {
     display: block;
+    margin-left: auto;
   }
   .site {
     display: none;

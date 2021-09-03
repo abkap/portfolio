@@ -49,41 +49,6 @@ function animateCursor() {
 
 typeWriterAnime();
 
-// // theme switcher
-// themeButton.addEventListener("click", () => {
-//   if (currentTheme == "dark") {
-//     /*
-//     --blog-color: #3b5ed7;
-//     --bg-color: #2c2c30;
-//     --card-color1: #373944;
-//     --card-color2: #5b5d67;
-//     */
-//     root.style.setProperty("--bg-color", "#B3C1F2");
-//     themeButtonImg.src = "./icons/sun.svg";
-
-//     root.style.setProperty("--card-color1", "#C7D3FF");
-//     root.style.setProperty("--card-color2", "#A7B4E4");
-//     root.style.setProperty("--font-color", "#5D6CA3");
-//     root.style.setProperty("--terminal-color", "#C7D3FF");
-//     hamburger.style.filter = "invert(1)";
-//     // set to light theme
-
-//     currentTheme = "light";
-//   } else if (currentTheme == "light") {
-//     // set to dark theme
-//     root.style.setProperty("--bg-color", "#2c2c30");
-//     themeButtonImg.src = "./icons/moon.svg";
-
-//     root.style.setProperty("--card-color1", "#373944");
-//     root.style.setProperty("--card-color2", "#5b5d67");
-//     root.style.setProperty("--font-color", "white");
-//     root.style.setProperty("--terminal-color", "black");
-//     hamburger.style.filter = "invert(0)";
-
-//     currentTheme = "dark";
-//   }
-// });
-
 // for smaller devices
 
 aTag.forEach((item) => {
