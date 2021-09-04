@@ -175,6 +175,7 @@ ul li {
 .contact > h3 {
   /* background-color: lightgreen; */
   width: fit-content;
+  width: -moz-fit-content;
   margin: auto;
   margin-bottom: 10px;
   font-size: 2rem;
