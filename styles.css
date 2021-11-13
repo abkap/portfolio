@@ -222,6 +222,7 @@ ul li {
   border-radius: 10px;
   display: flex;
   background: var(--card-color1);
+  /* background: lightblue; */
   width: 300px;
   height: 300px;
   margin-bottom: 30px;

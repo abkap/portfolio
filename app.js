@@ -27,13 +27,15 @@ async function waitFor(time) {
 }
 
 async function typeWriterAnime() {
+  typewriter.innerHTML += "<span class='blinker'>_</span>";
+  animateCursor();
+  await waitFor(3000);
   for (var i = 0; i < text.length; i++) {
     await waitFor(100);
 
     typewriter.innerHTML =
       text.substring(0, i) + "<span class='blinker'>_</span>";
   }
-  animateCursor();
 }
 function animateCursor() {
   var animate = setInterval(() => {
