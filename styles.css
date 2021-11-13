@@ -175,6 +175,7 @@ ul li {
 .contact > h3 {
   /* background-color: lightgreen; */
   width: fit-content;
+  width: -moz-fit-content;
   margin: auto;
   margin-bottom: 10px;
   font-size: 2rem;
@@ -209,7 +210,7 @@ ul li {
   animation: animateToTop 0.3s ease forwards;
 }
 .works {
-  perspective: 1000px;
+  /* perspective: 1000px; */
 
   /* background: lightseagreen; */
   display: flex;
@@ -232,8 +233,16 @@ ul li {
   transition: 0.3s ease;
 }
 
-.works a:nth-child(2n) {
+.works .super-link:nth-child(2n) a {
   background: var(--card-color2);
+}
+
+/* div containing anchor tag */
+.super-link {
+  perspective: 1000px;
+
+  /* background: lightblue; */
+  /* height: fit-content; */
 }
 .card {
   /* background: lightsalmon; */
