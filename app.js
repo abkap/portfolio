@@ -57,7 +57,8 @@ aTag.forEach((item) => {
   item.addEventListener("click", () => {
     if (isOptionActive) {
       optionEnable.style.display = "none";
-      burger.src = "./icons/hamburger.svg";
+      // burger.src = "./icons/hamburger.svg";
+      hamburger.classList.remove("is-active");
 
       isOptionActive = false;
     }
@@ -72,7 +73,8 @@ hamburger.addEventListener("click", () => {
 
     isOptionActive = true;
 
-    burger.src = "./icons/close.svg";
+    // burger.src = "./icons/close.svg";
+    hamburger.classList.add("is-active");
 
     if (isAnimateTopEnabled) {
       optionEnable.classList.remove("animateToTopClass");
@@ -82,7 +84,9 @@ hamburger.addEventListener("click", () => {
     isAnimateBottomEnabled = true;
   } else {
     // disable here
-    burger.src = "./icons/hamburger.svg";
+    // burger.src = "./icons/hamburger.svg";
+    hamburger.classList.remove("is-active");
+
     if (isAnimateBottomEnabled) {
       optionEnable.classList.remove("animateToBottomClass");
       isAnimateBottomEnabled = false;
